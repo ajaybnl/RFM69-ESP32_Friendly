@@ -10,7 +10,24 @@ This library is a modified version of the [Lowpowerlab RFM69](https://www.lowpow
 
 ## How to Use with ESP32
 
-### Step 1: Define SPI Bus and CS Pin
+### Step 1: Attach RFM69
+
+- Attach RFM69 with this pins
+ 
+### SPI2 Pins:
+
+- SCK = 14
+- MISO = 12
+- MOSI = 13
+- SS(CS) = 15
+- 
+### SPI3 Pins:
+- SCK = 18
+- MISO = 19
+- MOSI = 23
+- SS(CS) = 5
+
+### Step 2: Define SPI Bus and CS Pin
 
 The ESP32 has multiple SPI buses, and the library allows you to specify which one you want to use by selecting the appropriate Chip Select (CS) pin.
 
@@ -18,6 +35,8 @@ The ESP32 has multiple SPI buses, and the library allows you to specify which on
 - **For VSPI (SPI3)**: Use **GPIO 5** for the CS pin.
 
 The library will automatically select the correct SPI bus based on the CS pin you choose.
+
+### Step 3: Use the code : 
 
 ```cpp
 
