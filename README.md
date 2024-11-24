@@ -11,7 +11,26 @@ By Felix Rusu, [LowPowerLab.com](http://LowPowerLab.com)
 RFM69 library for RFM69W, RFM69HW, RFM69CW, RFM69HCW (semtech SX1231, SX1231H)
 <br/>
 The latest examples, new features and bug fixes are found in the [original repository](https://github.com/LowPowerLab/RFM69) of this library.
+## ESP32 Friendly
+This library is same as Lowpowerlab, but with some modifications to use with ESP32
+## How to Use with Esp32
+- You have to suggest the SPI you are using thru SPI_CC pin. The library will select that SPI class Like HSPI, VSPI
 
+- To Select HSPI (OR SPI2) Use GPIO 15 For CS
+Like: #define CS 15
+
+- To Select VSPI (OR SPI3) Use GPIO 5 For CS
+  Like: #define CS 5
+
+Main Code Must Have: 
+- RFM69 rfm;
+- IN SETUP
+ -  rfm.setCS(CS);
+ - rfm.setIrq(IRQ);
+ - rfm.initialize(FREQUENCY, MY_ID, NETWORKID);
+- // all other commands optionally
+
+  
 ## License
 GPL 3.0, please see the [License.txt](https://github.com/LowPowerLab/RFM69/blob/master/License.txt) file for details. Be sure to include the same license with any fork or redistribution of this library.
 
