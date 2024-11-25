@@ -106,12 +106,14 @@ bool RFM69::initialize(uint8_t freqBand, uint16_t nodeID, uint8_t networkID) {
     {255, 0}
   };
 
-  digitalWrite(_slaveSelectPin, HIGH);
+ 
   pinMode(_slaveSelectPin, OUTPUT);
+   
   if(_spi == nullptr){
     _spi = &SPI;
   }
   
+#ifdef ESP32
 // for ESP32  
 if(_slaveSelectPin==5){
   
@@ -129,14 +131,18 @@ digitalWrite(_slaveSelectPin, HIGH);
 
 //SPI1	
 digitalWrite(_slaveSelectPin, HIGH);
-pinMode(_slaveSelectPin, OUTPUT);
 _spi->begin(SCK,MISO,MOSI,SS);
 
 }else{
 //No SPI Selected
 
 }
- 
+#else
+
+digitalWrite(_slaveSelectPin, HIGH);
+_spi->begin(SCK,MISO,MOSI,SS);
+  
+#endif 
 
 #ifdef SPI_HAS_TRANSACTION
   _settings = SPISettings(8000000, MSBFIRST, SPI_MODE0);
