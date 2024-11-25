@@ -20,13 +20,16 @@ This library is a modified version of the [Lowpowerlab RFM69](https://www.lowpow
 - MISO = 12
 - MOSI = 13
 - SS(CS) = 15
-- 
+- DIO0 = 16 (Any Pin)
+-  
 ### SPI3 Pins:
 - SCK = 18
 - MISO = 19
 - MOSI = 23
 - SS(CS) = 5
+- DIO0 = 16 (Any Pin)
 
+- 
 ### Step 2: Define SPI Bus and CS Pin
 
 The ESP32 has multiple SPI buses, and the library allows you to specify which one you want to use by selecting the appropriate Chip Select (CS) pin.
@@ -64,6 +67,8 @@ RFM69 rfm;
 // For VSPI (SPI3) use GPIO 5 for CS
 //#define CS 5
 
+//define DIO0 pin of rfm69
+#define IRQ 16
 
   void setup() {  
 
