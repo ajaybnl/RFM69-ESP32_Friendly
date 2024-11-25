@@ -1,12 +1,12 @@
 {
-  "name": "RFM69",
+  "name": "RFM69-Esp32_Friendly",
   "version": "1.5.2",
   "keywords": "rf, radio, wireless, spi",
-  "description": "RFM69 library for RFM69W, RFM69HW, RFM69CW, RFM69HCW (semtech SX1231, SX1231H)",
+  "description": "RFM69 library for Esp32 Support on RFM69W, RFM69HW, RFM69CW, RFM69HCW (semtech SX1231, SX1231H)",
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/LowPowerLab/RFM69.git"
+    "url": "https://github.com//ajaybnl/RFM69-ESP32_Friendly.git"
   },
   "frameworks": "arduino",
   "platforms": "atmelavr",
@@ -14,7 +14,7 @@
   [
     {
       "name": "SPIFlash",
-      "authors": "Felix Rusu"
+      "authors": "Felix Rusu,Ajay Kumar"
     }
   ]
 }
